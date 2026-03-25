@@ -10,7 +10,7 @@ import messageRoutes from "./routes/message.routes.js";
 
 dotenv.config();
 
-const CLIENT_URL = process.env.CLIENT_URL || "http://localhost:5173";
+const CLIENT_URL = process.env.CLIENT_URL ? process.env.CLIENT_URL.replace(/\/$/, "") : "http://localhost:5173";
 
 const app = express();
 const httpServer = createServer(app);
